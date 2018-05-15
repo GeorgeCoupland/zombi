@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
-// import { AuthService } from './services/auth.service';
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -15,11 +15,21 @@ export class AppComponent implements OnInit {
   user: any;
 
   constructor(
-    private router: Router
-    // @todo inject authService
+    private router: Router,
+    private authService: AuthService
   ) { }
   
   ngOnInit() {
-    // @todo observe authService.userChange$ and update loading/anon/user
+    this.authService.userChange$.subscribe((user) => {
+      this.loading = false;
+      this.user = user;
+      this.anon = !user;
+    });
   }
+
+  handleLogout() {
+    this.authService.logout()
+      .then(() => this.router.navigate(['/login']));
+  }
+
 }

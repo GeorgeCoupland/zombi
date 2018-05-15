@@ -1,0 +1,18 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-map-page',
+  templateUrl: './map-page.component.html',
+  styleUrls: ['./map-page.component.css']
+})
+export class MapPageComponent implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+
+    // here we should talk with the service for getting all the sightings
+
+  }
+
+}

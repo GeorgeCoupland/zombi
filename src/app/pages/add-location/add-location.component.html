@@ -1,0 +1,55 @@
+<form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
+
+  <div class="field">
+    <label>Type</label>
+    <select name="type" [(ngModel)]="type">
+      <option value="zombie">Zombie Hoard</option>
+      <option value="ally">Ally Clan</option>
+      <option value="enemy">Enemy Clan</option>
+    </select>
+  </div>
+
+  <div class="field">
+    <label>Size</label>
+    <select name="size" [(ngModel)]="size">
+      <option value="10">Small</option>
+      <option value="20">Medium</option>
+      <option value="50">Large</option>
+      <option value="100">Fucking huge</option>
+    </select>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && latitudeField.errors}">
+    <label>Latitude</label>
+    <input type="text" name="latitude" [(ngModel)]="lat" #latitudeField="ngModel" required minlength="6" [disabled]="processing"
+    />
+    <div *ngIf="feedbackEnabled && latitudeField.errors">
+      <p *ngIf="latitudeField.errors.required" class="validation">Latitude Required</p>
+      <p *ngIf="latitudeField.errors.minlength" class="validation">Latitude is Too Short</p>
+    </div>
+  </div>
+
+  <div class="field" [ngClass]="{'has-error': feedbackEnabled && longtitudeField.errors}">
+    <label>Longtitude</label>
+    <input type="text" name="longtitude" [(ngModel)]="lng" #longtitudeField="ngModel" required minlength="6" [disabled]="processing"
+    />
+    <div *ngIf="feedbackEnabled && longtitudeField.errors">
+      <p *ngIf="longtitudeField.errors.required" class="validation">Longtitude Required</p>
+      <p *ngIf="longtitudeField.errors.minlength" class="validation">Longtitude is Incorrect</p>
+    </div>
+  </div>
+
+  <div class="field submit">
+    <button type="submit" [disabled]="processing">Add</button>
+    <div *ngIf="feedbackEnabled && form.invalid">
+      <p class="validation">There Are Errors in the Form, Please Review the Fields</p>
+    </div>
+  </div>
+</form>
+
+--size {{size}}
+--type {{type}}
+
+<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>

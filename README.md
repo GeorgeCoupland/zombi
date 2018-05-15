@@ -19,29 +19,28 @@ Method   | Route                       | Does what?                             
 |:-------|:----------------------------|:-----------------------------------------|
 |post    |/auth/login                  | creates a new session                    |
 |post    |/auth/signup                 | creates a new user and logs them in      |
-|post    |/auth/logout                 | logs out user session                     |
+|post    |/auth/logout                 | logs out user session                    |
 |get     |/auth/me                     | retrieve current user info               |
 
-## ITEM
-Method   | Route                       | Does what?                              |
+## LOCATION
+Method   | Route                       | Does what?                               |
 |:-------|:----------------------------|:-----------------------------------------|
-|get     |/locations                       | shows the list                                                         oflocations               
-         |
-|post    |/locations                       | creates a new item         
+|get     |/locations                       | shows the list  oflocations          |
+|post    |/locations                       | creates a new location                  |
 
 
-// ---- Lower Priority              |
+// ---- Lower Priority              
 
 |put     |/locations/:id                   | updates an item                          |
 |delete  |/locations/:id                   | change status of the item                |
 |get     |/locations/:id                   | shows the item detail page               |
 
-## PROFILE
+## USER
 Method   | Route                       | Does What?                              |
 |:-------|:----------------------------|:-----------------------------------------|
 |get     |/users/:id                   | shows the users detail page              |
 |put     |/users/:id/update            | updates an user                          |
-|get     /users/                       | show all users
+|get     |/users/                       | show all users
 
 # USER STORIES
 As a visitor you can:
