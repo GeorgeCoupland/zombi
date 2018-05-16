@@ -22,7 +22,11 @@ export class MapPageComponent implements OnInit {
       .catch((err) => {
         console.error(err);
       })
-    }
+  }
+
+  mapClicked($event) {
+
+  }
   
 
 

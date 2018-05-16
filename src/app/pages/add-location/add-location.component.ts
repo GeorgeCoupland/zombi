@@ -7,7 +7,8 @@ import { SightingService } from '../../services/sighting.service';
   styleUrls: ['./add-location.component.css']
 })
 export class AddLocationComponent implements OnInit {
-
+  processing: boolean;
+  feedbackEnabled: boolean;
   lat: number = 41.38086598684855;
   lng: number = 2.1718597412109375;
   size: number;
@@ -23,21 +24,25 @@ export class AddLocationComponent implements OnInit {
     this.lng = event.coords.lng;
   }
 
-  submitForm() {
-    const coordinates = [this.lat, this.lng];
-    const newSighting = {
-      coordinates,
-      size: this.size,
-      type: this.type
+  submitForm(form) {
+    this.feedbackEnabled = true;
+    if (form.valid) {
+      const coordinates = [this.lat, this.lng];
+      const newSighting = {
+        coordinates,
+        size: this.size,
+        type: this.type
+      }
+      this.processing = true;
+      this.sightingService.createOne(newSighting)
+      .then((result) => {
+        console.log(result);
+      })
+      .catch((err) => {
+        this.processing = false;
+        console.error(err);
+      })
     }
-
-    this.sightingService.createOne(newSighting)
-    .then((result) => {
-      console.log(result);
-    })
-    .catch((err) => {
-      console.error(err);
-    })
 
   }
 

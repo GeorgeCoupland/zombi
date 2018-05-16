@@ -2,13 +2,13 @@
 <header id="site-header">
   <div class="container">
 
-    <h1 class="site-title"><a [routerLink]="['/']">Zombi</a></h1>
+    <h1 class="site-title"><a>Zombi</a></h1>
 
     <nav class="site-nav">
 
 <div [ngClass]="{'is-user': user, 'is-anon': anon}">
   <div *ngIf="loading">
-    <span class="username text">loading...</span>
+    <span class="username text"></span>
   </div>
   <div *ngIf="!loading && !!user">
     <a [routerLink]="['/profile', user._id]">{{user.username}}</a>
@@ -33,6 +33,6 @@
 
 <footer id="site-footer">
   <div class="container">
-    nice footer
+    &copy; 2018 Kumamako Productions
   </div>
 </footer>

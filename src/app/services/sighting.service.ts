@@ -3,11 +3,12 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/toPromise';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class SightingService {
 
-  private API_URL = 'http://localhost:3000/sighting';
+  private API_URL = environment.API_URL + '/sighting';
 
   constructor(private httpClient: HttpClient) { }
 

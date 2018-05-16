@@ -1,5 +1,5 @@
 <!-- we will have here the map -->
-<agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
+<agm-map [latitude]="lat" [longitude]="lng" (click)="mapClicked($event)">
   <ng-container *ngFor="let sighting of sightings">
     <agm-marker [latitude]="sighting.location.coordinates[0]" [longitude]="sighting.location.coordinates[1]">
       <agm-info-window>{{sighting.type}}</agm-info-window>
