@@ -19,4 +19,15 @@ export class SightingService {
       .toPromise()
   }
 
+  allSightings(): Promise<any> {
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`${this.API_URL}/all`, options)
+      .toPromise()
+  }
+
+
+
 }
+// new method for getting all the sightings

@@ -8,8 +8,8 @@ import { SightingService } from '../../services/sighting.service';
 })
 export class AddLocationComponent implements OnInit {
 
-  lat: number = 51.678418;
-  lng: number = 7.809007;
+  lat: number = 41.38086598684855;
+  lng: number = 2.1718597412109375;
   size: number;
   type: string;
 
