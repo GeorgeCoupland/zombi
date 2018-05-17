@@ -1,0 +1,18 @@
+<div class="home-container">
+  <div class="white-wrapper">
+    <h1 class="container">asdasdasd</h1>
+    <div *ngIf="!loading && !!user">
+      <a [routerLink]="['/profile', user._id]">{{user.username}}</a>
+      <a [routerLink]="['/add-location']">Add Sighting</a>
+      <a [routerLink]="['/map']">Map</a>
+      <a (click)="handleLogout()">logout</a>
+    </div>
+    <div *ngIf="!loading && anon">
+      <a [routerLink]="['/login']">login</a>
+      <a [routerLink]="['/signup']">signup</a>
+    </div>
+  </div>
+  <div class="home-image">
+    <img class="zombieface" src="/assets/images/zombieface.jpeg">
+  </div>
+</div>

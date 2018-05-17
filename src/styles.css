@@ -17,7 +17,7 @@ body {
 /* ---- typography ---- */
 
 .site-title {
-  color: #B2D6E8
+  color: red
   
 }
 
@@ -33,6 +33,54 @@ p {
 }
 
 
+
+/* --- forms --- */
+
+/* -- forms -- */
+
+form.is-processing {
+	opacity: 0.5;
+}
+
+form .field {
+	margin-bottom: 20px;
+}
+
+form label {
+	display: block;
+	margin-bottom: 10px;
+	font-style: bold;
+}
+
+form input {
+  padding: 5px;
+  font-size: 16px;
+}
+
+form .submit {
+  padding-top: 20px;
+}
+
+form .submit button {
+  padding: 5px 20px;
+  text-align: center;
+  font-size: 16px;
+  background-color: red;
+  cursor: pointer;
+}
+
+form .field.has-error label {
+	color: red;
+}
+
+form .validation {
+	margin: 5px 0 10px;
+	color: red;
+}
+
+form .field.has-error input {
+	border: 1px solid  red;
+}
 
 /* ---- layout ---- */
 
@@ -54,15 +102,15 @@ p {
   margin-bottom: 60px;
 }
 
-.container {
-  margin: 0 20px;
-
-}
-
 .section {
   margin-bottom: 20px;
   padding-top: 20px;
 }
+
+.container {
+  margin: 0 20px;
+}
+
 
 @media (min-width: 768px) {
   .container {
@@ -74,4 +122,17 @@ p {
 
 agm-map {
   height: 300px;
+}
+
+.button.blue{
+  background-color: red;
+  border-color: red
+}
+
+.button.blue:hover{
+  background-color: red;
+}
+
+.button.blue:active{
+  background: red;
 }

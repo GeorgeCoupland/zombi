@@ -1,9 +1,10 @@
-<!-- we will have here the map -->
-<agm-map [latitude]="lat" [longitude]="lng" (click)="mapClicked($event)">
-  <ng-container *ngFor="let sighting of sightings">
-    <agm-marker [latitude]="sighting.location.coordinates[0]" [longitude]="sighting.location.coordinates[1]">
-      <agm-info-window>{{sighting.type}}</agm-info-window>
-    </agm-marker>
-  </ng-container>
-  <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> Here we should have an ngFor for setting more than one marker -->
-</agm-map>
+<div class="container">
+  <agm-map [latitude]="lat" [longitude]="lng" (click)="mapClicked($event)">
+    <ng-container *ngFor="let sighting of sightings">
+      <agm-marker [latitude]="sighting.location.coordinates[0]" [longitude]="sighting.location.coordinates[1]">
+        <agm-info-window>{{sighting.type}}</agm-info-window>
+      </agm-marker>
+    </ng-container>
+    <!-- <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker> Here we should have an ngFor for setting more than one marker -->
+  </agm-map>
+</div>

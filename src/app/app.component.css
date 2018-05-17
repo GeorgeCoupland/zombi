@@ -1,0 +1,18 @@
+.site-title a {
+  color: white;
+  text-decoration: none;
+}
+
+.site-nav a {
+  color: red;
+}
+
+#site-header {
+  border-bottom: 10px solid red;
+}
+
+#site-footer {
+  padding: 20px 0;
+  background-color: red;
+  color: white;
+}

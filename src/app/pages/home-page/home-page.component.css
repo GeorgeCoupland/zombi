@@ -1,0 +1,47 @@
+.zombieface {
+  width: 200%;
+}
+
+.home-image {
+  overflow: hidden;
+}
+
+.white-wrapper {
+  position: absolute;
+  width: 100%;
+}
+
+.home-container {
+  background: black;
+}
+
+h1 {
+  color: white;
+  padding-top: 30px;
+  line-height: 150%;
+}
+
+
+
+@media (min-width: 768px) {
+  .zombieface {
+    margin-left: 25%;
+    width: 150%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .zombieface {
+    margin-left: 40%;
+    width: 120%;
+  }
+}
+
+
+@media (min-width: 1600px) {
+  .zombieface {
+    margin-left: 50%;
+    width: 100%;
+  }
+}
