@@ -1,11 +1,12 @@
+<div class="form-containter">
 <form (ngSubmit)="submitForm(form)" #form="ngForm" novalidate [ngClass]="{'is-processing': processing}">
 
   <div class="field">
     <label>Type</label>
     <select name="type" [(ngModel)]="type">
-      <option value="zombie">Zombie Hoard</option>
-      <option value="ally">Ally Clan</option>
-      <option value="enemy">Enemy Clan</option>
+      <option value="zombie-hoard">Zombie Hoard</option>
+      <option value="ally-clan">Ally Clan</option>
+      <option value="cannibals">Enemy Clan</option>
     </select>
   </div>
 
@@ -15,7 +16,7 @@
       <option value="10">Small</option>
       <option value="20">Medium</option>
       <option value="50">Large</option>
-      <option value="100">Fucking huge</option>
+      <option value="Fucking Huge">Fucking Huge</option>
     </select>
   </div>
 
@@ -47,8 +48,10 @@
   </div>
 </form>
 
---size {{size}}
 --type {{type}}
+--size {{size}}
+
+</div>
 
 <agm-map [latitude]="lat" [longitude]="lng" (mapClick)="mapClicked($event)">
   <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>

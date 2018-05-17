@@ -1,15 +1,15 @@
 <div class="home-container">
   <div class="white-wrapper">
-    <h1 class="container">asdasdasd</h1>
+    <h1 class="container">A Social Network For Plague Lovers</h1>
     <div *ngIf="!loading && !!user">
       <a [routerLink]="['/profile', user._id]">{{user.username}}</a>
       <a [routerLink]="['/add-location']">Add Sighting</a>
       <a [routerLink]="['/map']">Map</a>
-      <a (click)="handleLogout()">logout</a>
+      <a (click)="handleLogout()">Logout</a>
     </div>
     <div *ngIf="!loading && anon">
-      <a [routerLink]="['/login']">login</a>
-      <a [routerLink]="['/signup']">signup</a>
+      <a [routerLink]="['/login']">Login</a>
+      <a [routerLink]="['/signup']">Signup</a>
     </div>
   </div>
   <div class="home-image">

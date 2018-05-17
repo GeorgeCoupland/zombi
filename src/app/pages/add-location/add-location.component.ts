@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SightingService } from '../../services/sighting.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-location',
@@ -11,10 +12,10 @@ export class AddLocationComponent implements OnInit {
   feedbackEnabled: boolean;
   lat: number = 41.38086598684855;
   lng: number = 2.1718597412109375;
-  size: number;
+  size: string;
   type: string;
 
-  constructor(private sightingService: SightingService) { }
+  constructor(private sightingService: SightingService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -37,6 +38,7 @@ export class AddLocationComponent implements OnInit {
       this.sightingService.createOne(newSighting)
       .then((result) => {
         console.log(result);
+        this.router.navigate(["/map"])
       })
       .catch((err) => {
         this.processing = false;
